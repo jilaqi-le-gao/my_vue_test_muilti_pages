@@ -1,14 +1,21 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:8080/proxy';
+axios.defaults.baseURL = '';
 
 const state = {
 	csrftoken: null,
+	login_fail: false,
 };
 
 const mutations = {
 	UPDATE_CSRFTOKEN (state, payload){
 		state.csrftoken = payload;
+	},
+	LOGINFAIL (state){
+		state.login_fail = true;
+	},
+	CLOSELOGINFAIL (state){
+		state.login_fail = false;
 	}
 };
 
@@ -30,11 +37,23 @@ const actions = {
 			data: form_data,
 		}).then(function (response){
 			console.log(response);
+			if (response.request.responseURL != window.location.href){
+				console.log(response.request.responseURL);
+				window.location.href = response.request.responseURL;
+			}else{
+				console.log('login failed');
+				context.commit('LOGINFAIL');
+			}
 		})
-	}
+	},
+	closeLoginFail (context) {
+		context.commit('CLOSELOGINFAIL')
+	},
 };
 
-const getters = {};
+const getters = {
+	get_login_fail: state => state.login_fail,
+};
 
 const loginModule = {
 	namespaced: true,
