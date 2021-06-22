@@ -1,6 +1,6 @@
 <template>
 <v-app>
-  <NavBar />
+  <FarmNav />
   <v-main>
   </v-main>
 </v-app>
@@ -8,7 +8,7 @@
 
 <script>
 
-import FarmNav from '@components/FarmNav';
+import FarmNav from '../../components/FarmNav';
 
 export default {
 	name: 'NavMain',
