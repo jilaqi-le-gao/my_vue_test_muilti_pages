@@ -46,26 +46,37 @@
     </v-navigation-drawer>
     <v-navigation-drawer
     >
-      <v-list>
-        <v-list-item
-          v-for="n in 5"
-          :key="n"
-          link
-        >
-          <v-list-item-content>
-            <v-list-item-title>Item {{ n }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-      <v-divider></v-divider>
-      <v-spacer></v-spacer>
-      <v-timeline
-        dense
+
+      <v-container 
+        fill-height fluid 
       >
-        <v-timeline-item>timeline item</v-timeline-item>
-        <v-timeline-item>timeline item</v-timeline-item>
-        <v-timeline-item>timeline item</v-timeline-item>
-      </v-timeline>
+        <v-list>
+          <v-list-item
+            v-for="n in 5"
+            :key="n"
+            link
+          >
+            <v-list-item-content>
+              <v-list-item-title>Item {{ n }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-divider></v-divider>
+          <v-spacer></v-spacer>
+
+          <v-list>
+            <v-timeline
+              dense
+            >
+              <v-timeline-item>timeline item</v-timeline-item>
+              <v-timeline-item>timeline item</v-timeline-item>
+              <v-timeline-item>timeline item</v-timeline-item>
+            </v-timeline>
+          </v-list>
+        </v-list>
+
+      </v-container>
+    
     </v-navigation-drawer>
   </v-layout>
 </template>
