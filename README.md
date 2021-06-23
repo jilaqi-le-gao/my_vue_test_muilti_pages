@@ -1,4 +1,10 @@
-# test_multi_pages
+# My test pages for vue vuetify study
+
+This projects contains, study of vue vuetify, based on Hassan Djirdeh's "Fullstack Vue".
+
+This project uses vuetify to build part of this book's examples.
+
+Also this project contains some my own templates or components crafted when practising.
 
 ## Project setup
 ```
@@ -27,3 +33,5 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
