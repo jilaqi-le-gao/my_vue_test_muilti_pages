@@ -68,20 +68,20 @@ export default {
   },
   methods: {
     monitorEnterKey () {
-      this.$store.dispatch('addNote', this.input);
-      this.$store.dispatch('addTimestamp', new Date().toLocaleString());
+      this.$store.dispatch('Notes/addNote', this.input);
+      this.$store.dispatch('Notes/addTimestamp', new Date().toLocaleString());
       this.input = '';
     },
   },
   computed: {
     noteCount () {
-      return this.$store.getters.getNoteCount;
+      return this.$store.getters['Notes/getNoteCounts'];
     },
     notes() {
-      return this.$store.getters.getNotes;
+      return this.$store.getters['Notes/getNotes'];
     },
     timestamps() {
-      return this.$store.getters.getTimestamps;
+      return this.$store.getters['Notes/getTimestamps'];
     }
   }
 }
