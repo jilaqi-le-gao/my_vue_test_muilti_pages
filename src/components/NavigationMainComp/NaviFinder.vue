@@ -1,8 +1,8 @@
 <template>
   <v-row class="mb-2">
     <v-toolbar
-      dark
-      color="info"
+      light
+      color="background"
     >
       <v-toolbar-title>State selection</v-toolbar-title>
       <v-autocomplete
@@ -15,8 +15,9 @@
         flat
         hide-no-data
         hide-details
+        item-color="selected"
         label="What state are you from?"
-        solo-inverted
+        solo
       ></v-autocomplete>
       <v-btn icon>
         <v-icon>mdi-dots-vertical</v-icon>
@@ -33,7 +34,7 @@ export default {
     return {
       loading: false,
       items: [],
-      search: null,
+      search: null,  // this is used to communicate with backend, to get search result.
       select: null,
       states: [
         'Alabama',

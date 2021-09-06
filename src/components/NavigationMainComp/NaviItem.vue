@@ -19,7 +19,7 @@
     <v-list two-line>
       <v-list-item>
         <v-list-item-icon>
-          <v-icon color="indigo">
+          <v-icon color="success">
             mdi-phone
           </v-icon>
         </v-list-item-icon>

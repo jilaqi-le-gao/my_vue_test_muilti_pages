@@ -20,19 +20,25 @@
     <v-divider></v-divider>
 
     <v-list>
-      <v-list-item
-        v-for="[icon, text] in links"
-        :key="icon"
-        link
+      
+      <v-list-item-group
+        v-model="selectedItem"
+        color="selected"
       >
-        <v-list-item-icon>
-          <v-icon>{{ icon }}</v-icon>
-        </v-list-item-icon>
+        <v-list-item
+          v-for="[icon, text] in links"
+          :key="icon"
+          link
+        >
+          <v-list-item-icon>
+            <v-icon>{{ icon }}</v-icon>
+          </v-list-item-icon>
 
-        <v-list-item-content>
-          <v-list-item-title>{{ text }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
+          <v-list-item-content>
+            <v-list-item-title>{{ text }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list-item-group>
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -43,6 +49,7 @@ export default {
   props: [],
   data () {
     return {
+      selectedItem: 1,
       drawer: null,
       links: [
         ['mdi-inbox-arrow-down', 'Inbox'],
